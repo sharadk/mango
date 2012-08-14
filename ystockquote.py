@@ -1,6 +1,7 @@
-#  Revised by Sharad Kumar on 08/13/2012 to support Python 3.
-#
-#  The code was modified under GNU LGPL version 2.1.
+#  @author Sharad Kumar (sharadk@gmail.com)
+#  Revised in August 2012 to support Python 3.
+#  
+#  Revisions were made under GNU LGPL version 2.1.
 #
 #  Copyright (c) 2007-2008, Corey Goldberg (corey@goldb.org)
 #
@@ -38,9 +39,9 @@ def get_all(symbol):
     
     Returns a dictionary.
     """
-    values = __request(symbol, 'l1c1va2xj1b4j4dyekjm3m4rr5p5p6s7').split(',')
+    values = __request(symbol, 'l1c1va2xj1b4j4dyekjm3m4rr5p5p6s7b3b2').split(',')
     data = {}
-    data['price'] = values[0]
+    data['last_price'] = values[0]
     data['change'] = values[1]
     data['volume'] = values[2]
     data['avg_daily_volume'] = values[3]
@@ -60,6 +61,8 @@ def get_all(symbol):
     data['price_sales_ratio'] = values[17]
     data['price_book_ratio'] = values[18]
     data['short_ratio'] = values[19]
+    data['bid_price'] = values[20]
+    data['ask_price'] = values[21]
     return data
     
     
@@ -141,6 +144,12 @@ def get_price_book_ratio(symbol):
        
 def get_short_ratio(symbol): 
     return __request(symbol, 's7')
+    
+def get_bid_price(symbol):
+    return __request(symbol, 'b3')
+    
+def get_ask_price(symbol):
+    return __request(symbols, 'b2')
     
     
 def get_historical_prices(symbol, start_date, end_date):
