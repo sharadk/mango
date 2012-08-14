@@ -41,7 +41,7 @@ def get_all(symbol):
     """
     values = __request(symbol, 'l1c1va2xj1b4j4dyekjm3m4rr5p5p6s7b3b2').split(',')
     data = {}
-    data['last_price'] = values[0]
+    data['price'] = values[0]
     data['change'] = values[1]
     data['volume'] = values[2]
     data['avg_daily_volume'] = values[3]
