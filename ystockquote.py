@@ -149,7 +149,7 @@ def get_bid_price(symbol):
     return __request(symbol, 'b3')
     
 def get_ask_price(symbol):
-    return __request(symbols, 'b2')
+    return __request(symbol, 'b2')
     
     
 def get_historical_prices(symbol, start_date, end_date):
